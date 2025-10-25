@@ -25,7 +25,7 @@
         <LABEL for="checkout">CHECK-OUT DATE:</LABEL>
         <input type="date" id="checkout" name="checkout" required>
         <br><br>
-        <LABEL for="guests">NO. OF GUESTS:</LABEL>
+        <LABEL for="guests">ROOM TYPE:</LABEL>
         <SELECT id="room" name="ROOM">
             <OPTIOn value="SINGLE">SINGLE ROOM</OPTIOn>
             <OPTIOn value="DOUBLE">DOUBLE ROOM</OPTIOn>
@@ -33,8 +33,9 @@
             <OPTIOn value="SUITE">SUITE</OPTIOn>
         </SELECT>
         <br><br>
-        <LABEL for="GUESTS">GUESTS:</LABEL><BR>
-        <input type="number" id="GUESTS" NAME="GUESTS" min="1" max="10"><BR><BR>
+        <label for="guests">NUMBER OF GUESTS:</label>
+        <input type="number" id="guests" name="guests" min="1" max="10">
+        <br><br>
         <LABEL for="REQUESTS">SPECIAL REQUESTS:</LABEL><BR>
         <TEXTarea ID="REQUESTS" NAME="REQUESTS" ROWS="4" cols="40"></TEXTarea><BR><BR>
         <INPut TYPE="SUBMIT" VALUE="BOOK NOW">
