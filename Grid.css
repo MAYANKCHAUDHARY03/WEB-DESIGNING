@@ -1,0 +1,101 @@
+    :root {
+      --header: #ff8a3d;
+      --main:   #357ded;  
+      --empty:  #ffffff;  
+      --sidebar:#e53935; 
+      --footer: #2ecc71; 
+      --text-dark: #1f2937;
+      --text-light: #ffffff;
+      --gap: 16px;
+      --maxw: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family:sans-serif;
+      color: var(--text-dark);
+      background: #f6f7f9;
+      line-height: 1.5;
+      display: grid;
+      place-items: start center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: var(--maxw);
+      display: grid;
+      gap: var(--gap);
+      grid-template-columns: 2fr 1fr 1fr;   
+      grid-template-rows: auto 1fr auto;    
+      grid-template-areas:
+        "header header header"
+        "main   empty  sidebar"
+        "footer footer footer";
+      min-height: 70vh;
+    }
+
+    header {
+      grid-area: header;
+      background: var(--header);
+      color: var(--text-light);
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    main {
+      grid-area: main;
+      background: var(--main);
+      color: var(--text-light);
+      padding: 20px;
+      border-radius: 12px;
+      min-height: 260px;
+    }
+
+    .empty {
+      grid-area: empty;
+      background: var(--empty);
+      color: var(--text-dark);
+      padding: 20px;
+      border: 2px dashed #d1d5db;
+      border-radius: 12px;
+      min-height: 260px;
+    }
+
+    aside {
+      grid-area: sidebar;
+      background: var(--sidebar);
+      color: var(--text-light);
+      padding: 20px;
+      border-radius: 12px;
+      min-height: 260px;
+    }
+
+    footer {
+      grid-area: footer;
+      background: var(--footer);
+      color: var(--text-light);
+      padding: 20px;
+      border-radius: 12px;
+    }
+    h1, h2 {
+      margin: 0 0 8px;
+      font-weight: 700;
+    }
+    p { margin: 0; opacity: 0.95; }
+    @media (max-width: 900px) {
+      .page {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas:
+          "header"
+          "main"
+          "empty"
+          "sidebar"
+          "footer";
+      }
+      main, .empty, aside { min-height: auto; }
+    }
